@@ -1,5 +1,5 @@
 <?php 
-// namespace App/Database;
+namespace App\Database;
 
 class dbHandler {
     const HOST = '127.0.0.1';
