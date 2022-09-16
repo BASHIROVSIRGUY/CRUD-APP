@@ -24,10 +24,6 @@ class dbController {
         $this->db = $db;
     }
 
-    public function saveTocken($tocken, $user_id){
-        $tocken = '';
-    }
-
     public function createUser($name, $login, $password){
         $max_id = $this->db->query(SELECT_LAST_ID_PAGES);
         $this->db->query_with_params(CREATE_USER, 'sss', $login, $password, $name);
