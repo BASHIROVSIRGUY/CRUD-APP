@@ -6,10 +6,10 @@ class dbController {
     protected $db = null;
     
     const SELECT_LAST_ID_PAGES = 'SELECT  MAX(`ID`) FROM `pages` WHERE 1;';
-    const CREATE_USER = 'INSERT INTO `users` (`name`, `login`, `password`) VALUES (?, ?, ?);';
+    const CREATE_USER = 'INSERT INTO `users` (`name`, `login`, `password_hash`) VALUES (?, ?, ?);';
     const SELECT_ONE_USER = 'SELECT * FROM `users` WHERE `ID` = ?;';
     const SELECT_ALL_USERS = 'SELECT * FROM `users` WHERE 1;';  
-    const UPDATE_USER = 'UPDATE `users` SET `login` = ?, SET `password` = ?, SET `name` = ? WHERE `ID` = ?;';
+    const UPDATE_USER = 'UPDATE `users` SET `login` = ?, SET `password_hash` = ?, SET `name` = ? WHERE `ID` = ?;';
     const DELETE_USER = 'DELETE FROM `users` WHERE `ID` = ?;';
 
     const SELECT_LAST_ID_USERS = 'SELECT  MAX(`ID`) FROM `users` WHERE 1;';
