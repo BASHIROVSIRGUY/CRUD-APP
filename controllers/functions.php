@@ -3,8 +3,10 @@ namespace App\functions;
 
 function checkAuth(){
     session_start();
-    if($_SESSION['auth'] === true){
-        if( $_COOKIE['auth_user_id'] == $_SESSION['auth_user_id'] 
+    if(isset($_SESSION['auth'])){
+        if( $_SESSION['auth'] === true
+            &&
+            $_COOKIE['auth_user_id'] == $_SESSION['auth_user_id'] 
             && 
             $_COOKIE['auth_login'] == $_SESSION['auth_login']){
             return true;
