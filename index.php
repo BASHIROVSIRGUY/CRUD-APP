@@ -78,5 +78,3 @@ if(!empty($_GET['url_param'])){
 }
 
 echo json_encode($response);
-// $json = getRequestJSON($controller);
-// echo $json;
