@@ -26,7 +26,8 @@ class dbController {
 
     public function createUser($name, $login, $password){
         $max_id = $this->db->query(SELECT_LAST_ID_PAGES);
-        $this->db->query_with_params(CREATE_USER, 'sss', $login, $password, $name);
+        $password_hash = password_hash($password);
+        $this->db->query_with_params(CREATE_USER, 'sss', $login, $password_hash, $name);
         return ['id' => ++$max_id];
     }
 
