@@ -22,6 +22,7 @@ class AuthController {
         if(!empty($user_info)){
             if(password_verify($password, $user_info['password_hash'])){
                 session_start();
+                $_SESSION = [];
                 $_SESSION['auth'] = true;
                 $_SESSION['auth_user_id'] = $user_info['ID'];
                 $_SESSION['auth_login'] = $user_info['login'];
